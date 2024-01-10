@@ -195,7 +195,7 @@ double evaluateExpression(const std::string& expr) {
     return values.top(); // Return the final result
 }
 
-void invalidParenthesisChecker(std::string &expr) {
+void invalidParenthesisChecker(const std::string &expr) {
     // Check for invalid parenthesis
 
     // Loop through each character in the expression
@@ -218,7 +218,9 @@ int main(int argc, char** argv) {
     std::string expression;
 
     if (argc > 1) {
-        expression = argv[1];
+        for (int i = 1; i < argc; i++) {
+            expression += argv[i];
+        }
     } else {
         std::cout << "Enter an expression: ";
         std::getline(std::cin, expression);

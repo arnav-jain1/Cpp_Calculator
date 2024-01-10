@@ -3,7 +3,7 @@ CXX = g++
 CXXFLAGS = -Wall -Wextra -g
 
 # Executable name
-TARGET = calculon.out
+TARGET = calculator
 
 # Object files
 OBJS = main.o
@@ -27,7 +27,5 @@ main.o: main.cpp
 clean:
 	rm -f $(TARGET) *.o
 
-# Valgrind memory leak check
-memcheck:
-	valgrind --leak-check=full ./$(TARGET)
+
 	
