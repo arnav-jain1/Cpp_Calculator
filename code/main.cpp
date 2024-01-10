@@ -5,6 +5,7 @@
 #include <cmath>
 #include <stdexcept>
 #include <algorithm>
+// #define DEBUG
 // Function to determine the precedence of operators
 int getPrecedence(char op) {
     // Higher number means higher precedence
@@ -226,6 +227,9 @@ int main(int argc, char** argv) {
         std::getline(std::cin, expression);
     }
 
+    #ifdef DEBUG
+    std::cout << "Expression: " << expression << std::endl;
+    #endif
 
     // Removes any whitespace in expression and trims the remaining string
     expression.erase(std::remove(expression.begin(), expression.end(), ' '), expression.end());
